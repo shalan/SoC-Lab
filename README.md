@@ -10,7 +10,7 @@ This repository contains the lab files used in the **Embedded System on a Chip**
 | **Lab 3**      | **Designing a UART Transmitter**                    | Implementing a UART transmitter module and integrating it into the SoC.                           |
 | **Lab 4**      | **Implementing TinySoC on an FPGA**                 | Synthesizing and deploying the SoC design onto an FPGA platform.                                  |
 | **Lab 5**      | **Adding an XiP Flash Controller to TinySoC**       | Incorporating an Execute-in-Place (XiP) flash controller to enable code execution from flash.     |
-| **Lab 6**      | **Creating a Simple Accelerator for TinySoC**       | Designing and integrating a custom hardware accelerator into the SoC.                             |
+| **Lab 6**      | **Developing a Simple Accelerator for TinySoC**       | Designing and integrating a custom hardware accelerator into the SoC.                             |
 
 These labs guide you through the process of designing and implementing a SoC, covering key concepts and practical skills needed in embedded system development. By progressing through the labs, you will gain hands-on experience with hardware design, system integration, and software development for embedded systems.
 
