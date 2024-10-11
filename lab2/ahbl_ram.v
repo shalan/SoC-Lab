@@ -15,7 +15,7 @@ module ahbl_ram (
 );
 
     parameter   SIZE = 64 * 1024;
-    parameter   VERBOSE = 1;
+    parameter   VERBOSE = 0;
     parameter   HEX_FILE = "test.hex";
     localparam  A_WIDTH = $clog2(SIZE) - 2;
 
