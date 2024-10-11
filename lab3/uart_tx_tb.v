@@ -19,6 +19,13 @@ module uart_tx_tb ;
         .done(done)
     );
 
+    serial_terminal terminal (
+        .clk(clk),             
+        .rst_n(rst_n),           
+        .rx(tx),           
+        .baud_div(baud_div)  
+    );
+
     always #10 clk = !clk;
 
     initial begin
@@ -39,9 +46,12 @@ module uart_tx_tb ;
         @(posedge clk);
         en = 1;
         baud_div = 9;
-        putchar(8'hA5);
-        putchar(8'hF0);
-        
+        putchar("H");
+        putchar("e");
+        putchar("l");
+        putchar("l");
+        putchar("o");
+        putchar("!");
         #100;
         $finish;
     end
