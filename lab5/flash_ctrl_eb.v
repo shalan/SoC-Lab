@@ -1,18 +1,18 @@
-module flash_ctrl_eb #(parameter DW = 256) (
+module flash_ctrl_eb #(parameter LW = 256) (
     input  wire             clk,
     input  wire             rst_n,
     input  wire             start,
     output wire             done,
     input  wire [23:0]      A,
-    output wire [DW-1:0]    D,
+    output wire [LW-1:0]    D,
     output wire             csn,
     output wire             sck,
     output wire [3:0]       doe,
     output wire [3:0]       do,
     input  wire [3:0]       di
 );
-    localparam ENDCNT = 80 + DW/2;
-    localparam CNTRW = $clog2(80+DW/2);
+    localparam ENDCNT = 80 + LW/2;
+    localparam CNTRW = $clog2(80+LW/2);
     wire trans_off = (bit_cntr == 'd8) | (bit_cntr == 'd18) | (cntr == ENDCNT);
     wire trans_on = (start) | (cntr == 'd19) | (cntr == 'd39);
 
@@ -110,7 +110,7 @@ module flash_ctrl_eb #(parameter DW = 256) (
 
     assign doe = (bit_cntr > 39) ? 4'h0 : 4'hF;
 
-    reg [DW-1:0] data;
+    reg [LW-1:0] data;
     reg [7:0] dbyte;
     always@(posedge clk, negedge rst_n)
         if(!rst_n)
@@ -127,7 +127,7 @@ module flash_ctrl_eb #(parameter DW = 256) (
             data <= 'b0;
         else if(cntr > 80)
             if(cntr[1:0] == 2'b0)
-                data <= {dbyte, data[DW-1:8]};
+                data <= {dbyte, data[LW-1:8]};
 
     //assign sck = cntr[0] & ~csn;
     reg sck_reg;

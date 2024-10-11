@@ -1,16 +1,16 @@
-module ahbl_flash_ctrl_eb_tb;
+module ahbl_flash_ctrl_eb_cache_tb;
 
     reg         HCLK;
     reg         HRESETn;
-    reg [31:0] HADDR;
-    reg [1:0]  HTRANS;
-    reg [2:0] 	HSIZE;
-    reg        HWRITE;
+    reg [31:0]  HADDR;
+    reg [ 1:0]  HTRANS;
+    reg [ 2:0] 	HSIZE;
+    reg         HWRITE;
     wire [31:0] HWDATA;
-    wire         HREADYOUT;
-    wire         HREADY;
+    wire        HREADYOUT;
+    wire        HREADY;
     
-    wire  [31:0] HRDATA;
+    wire [31:0] HRDATA;
 
     wire         csn;
     wire         sck;
@@ -32,7 +32,7 @@ module ahbl_flash_ctrl_eb_tb;
 
     // TB infrastructure
     initial begin
-        $dumpfile("ahbl_flash_ctrl_eb_tb.vcd");
+        $dumpfile("ahbl_flash_ctrl_eb_cache_tb.vcd");
         $dumpvars(0);
         #10_000;
         $finish;

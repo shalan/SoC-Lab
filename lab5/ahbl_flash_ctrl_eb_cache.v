@@ -1,4 +1,4 @@
-module ahbl_flash_ctrl_eb_cache #(parameter LW=256) (
+module ahbl_flash_ctrl_eb_cache #(parameter LW=32*8, NL=32) (
     // AHB-Lite Slave Interface
     input   wire                HCLK,
     input   wire                HRESETn,
@@ -55,7 +55,7 @@ module ahbl_flash_ctrl_eb_cache #(parameter LW=256) (
     //wire [23:0]  A;
     //wire [31:0]  D;
 
-    flash_ctrl_eb flash_ctrl (
+    flash_ctrl_eb #(.LW(LW)) flash_ctrl (
         .clk(HCLK),
         .rst_n(HRESETn),
         .start(m_start),
@@ -69,7 +69,7 @@ module ahbl_flash_ctrl_eb_cache #(parameter LW=256) (
         .di(di)
     );
 
-    ro_dmc #(.LW(LW), .NL(64)) cache_64x32 (
+    ro_dmc #(.LW(LW), .NL(NL)) cache (
         .clk(HCLK),
         .rst_n(HRESETn),
         // CPU/Bus Interface
