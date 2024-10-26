@@ -11,6 +11,8 @@ This repository contains the lab files used in the **Embedded System on a Chip**
 | **Lab 4**      | **Implementing TinySoC on an FPGA**                 | Synthesizing and deploying the SoC design onto an FPGA platform.                                  |
 | **Lab 5**      | **Adding an XiP Flash Controller to TinySoC**       | Incorporating an Execute-in-Place (XiP) flash controller to enable code execution from flash.     |
 | **Lab 6**      | **Developing a Simple Accelerator for TinySoC**       | Designing and integrating a custom hardware accelerator into the SoC.                             |
+| **Lab 7**      | **I2S Protocol**       | Designing and integrating a master I2S receiver to interface with I2S microphones.          |
+| **Lab 8**      | **Add an APB to TinySoC**       | Adding an Advanced Peripheral Bus to TinySoC                             |
 
 These labs guide you through the process of designing and implementing a SoC, covering key concepts and practical skills needed in embedded system development. By progressing through the labs, you will gain hands-on experience with hardware design, system integration, and software development for embedded systems.
 
